@@ -1,20 +1,20 @@
 [
   {
-    "name": "HSTLES",
+    "name": "HSTLES Website",
     "url": "https://hstles.com",
     "icon": "https://icons.duckduckgo.com/ip3/hstles.com.ico",
-    "slug": "hstles",
+    "slug": "hstles-website",
     "status": "up",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 182,
-    "timeDay": 182,
-    "timeWeek": 182,
-    "timeMonth": 182,
-    "timeYear": 182,
+    "time": 148,
+    "timeDay": 148,
+    "timeWeek": 148,
+    "timeMonth": 148,
+    "timeYear": 148,
     "dailyMinutesDown": {}
   }
 ]
