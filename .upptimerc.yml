@@ -14,11 +14,11 @@ status-website:
   # baseUrl: /status.hstles.com
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
   name: HSTLES Services Status
-  introTitle: "**Upptime** based service monitoring for HSTLES"
-  introMessage: This is for **real-time** data from our services.
+  # introTitle: "**Upptime** based service monitoring for HSTLES"
+  # introMessage: This is for **real-time** data from our services.
   navbar:
-    - title: Status
-      href: /
+    # - title: Status
+    #   href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
 
