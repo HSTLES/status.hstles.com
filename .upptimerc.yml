@@ -5,7 +5,8 @@ repo: status.hstles.com # The name of this repository
 sites:
   - name: HSTLES Website (hstles.com)
     url: https://hstles.com
-
+  - name: HSTLES Login (login.hstles.com)
+    url: https://login.hstles.com
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
