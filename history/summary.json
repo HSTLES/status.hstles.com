@@ -22,19 +22,19 @@
     "url": "https://login.hstles.com",
     "icon": "https://icons.duckduckgo.com/ip3/login.hstles.com.ico",
     "slug": "hstles-login-login-hstles-com",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 1977,
-    "timeDay": 11135,
-    "timeWeek": 3252,
-    "timeMonth": 1977,
-    "timeYear": 1977,
+    "status": "up",
+    "uptime": "99.97%",
+    "uptimeDay": "99.61%",
+    "uptimeWeek": "99.94%",
+    "uptimeMonth": "99.97%",
+    "uptimeYear": "99.97%",
+    "time": 1910,
+    "timeDay": 7707,
+    "timeWeek": 2985,
+    "timeMonth": 1910,
+    "timeYear": 1910,
     "dailyMinutesDown": {
-      "2024-11-25": 0
+      "2024-11-25": 6
     }
   }
 ]
