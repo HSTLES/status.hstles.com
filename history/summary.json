@@ -4,18 +4,19 @@
     "url": "https://hstles.com",
     "icon": "https://icons.duckduckgo.com/ip3/hstles.com.ico",
     "slug": "hstles-website-hstles-com",
-    "status": "up",
-    "uptime": "78.99%",
+    "status": "down",
+    "uptime": "79.04%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "86.86%",
-    "uptimeYear": "78.99%",
+    "uptimeMonth": "88.09%",
+    "uptimeYear": "79.04%",
     "time": 136,
     "timeDay": 159,
     "timeWeek": 182,
     "timeMonth": 153,
     "timeYear": 136,
     "dailyMinutesDown": {
+      "2025-02-09": 0,
       "2025-01-13": 74,
       "2025-01-12": 1440,
       "2025-01-11": 1440,
@@ -56,7 +57,7 @@
     "url": "https://login.hstles.com",
     "icon": "https://icons.duckduckgo.com/ip3/login.hstles.com.ico",
     "slug": "hstles-login-login-hstles-com",
-    "status": "up",
+    "status": "down",
     "uptime": "99.82%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -68,6 +69,7 @@
     "timeMonth": 472,
     "timeYear": 741,
     "dailyMinutesDown": {
+      "2025-02-09": 0,
       "2024-12-06": 230
     }
   }
