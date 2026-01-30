@@ -1,0 +1,54 @@
+name: Deploy Custom Status Dashboard
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - 'index.html'
+      - 'config.json'
+      - 'assets/**'
+  workflow_run:
+    workflows: ["Graphs CI", "Response Time CI", "Summary CI"]
+    types:
+      - completed
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy custom status page
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GH_PAT || github.token }}
+
+      - name: Prepare deployment directory
+        run: |
+          mkdir -p deploy
+
+          # Copy custom frontend files
+          cp index.html deploy/
+          cp config.json deploy/
+
+          # Copy Upptime-generated data (if exists)
+          [ -d api ] && cp -r api deploy/ || echo "No api directory yet"
+          [ -d graphs ] && cp -r graphs deploy/ || echo "No graphs directory yet"
+          [ -d history ] && cp -r history deploy/ || echo "No history directory yet"
+
+          # Copy assets (logo, etc.)
+          [ -d assets ] && cp -r assets deploy/ || echo "No assets directory"
+
+          echo "Deployment directory prepared"
+          ls -la deploy/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GH_PAT || github.token }}
+          publish_dir: ./deploy
+          publish_branch: gh-pages
+          force_orphan: false
+          user_name: "HSTLES Bot"
+          user_email: "bot@hstles.com"
+          commit_message: "Deploy custom status dashboard"
