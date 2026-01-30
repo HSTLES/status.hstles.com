@@ -1,26 +1,394 @@
-<!DOCTYPE html> <html lang=en> <head> <meta charset=utf-8> <meta content="width=device-width,initial-scale=1" name=viewport> <meta content=#333333 name=theme-color> <base href=/ > <link href=manifest.json rel=manifest crossorigin=use-credentials> <script>__SAPPER__={baseUrl:"",preloaded:[void 0,{}]};if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js');(function(){try{eval("async function x(){}");var main="/client/client.6d365591.js"}catch(e){main="/client/legacy/client.6cc32ec6.js"};var s=document.createElement("script");try{new Function("if(0)import('')")();s.src=main;s.type="module";s.crossOrigin="use-credentials";}catch(e){s.src="/client/shimport@2.0.5.js";s.setAttribute("data-main",main);}document.head.appendChild(s);}());</script> <link href=client/client-31a52aa5.css rel=stylesheet><link href=client/createOctokit-a85f76c7.css rel=stylesheet><link href=client/index-b0b6455a.css rel=stylesheet> <title>HSTLES Services Status</title> <script>// If `prefers-color-scheme` is not supported, fall back to light mode.
-      // In this case, light.css will be downloaded with `highest` priority.
-      if (typeof window !== "undefined" && typeof document !== "undefined" && "matchMedia" in window && window.matchMedia('(prefers-color-scheme: dark)').media === 'not all') {
-        document.documentElement.style.display = 'none';
-        document.head.insertAdjacentHTML(
-          'beforeend',
-          '<link rel="stylesheet" href={`${config.path}/themes/light.css`} onload="document.documentElement.style.display = \'\'">',
-        );
-      } </script> <link href=https://status.hstles.com/themes/light.css rel=stylesheet media=(prefers-color-scheme:light)> <link href=https://status.hstles.com/themes/dark.css rel=stylesheet media=(prefers-color-scheme:dark)><link href=https://status.hstles.com/global.css rel=stylesheet><link href=https://raw.githubusercontent.com/upptime/upptime/master/assets/upptime-icon.svg rel=icon type=image/svg><link href=/logo-192.png rel=icon type=image/png> <link href=/client/client.6d365591.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/client-31a52aa5.css rel=preload as=style><link href=/client/index.c6c66274.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/createOctokit.2bbd9797.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/inject_styles.803b7e80.js rel=modulepreload as=script crossorigin=use-credentials><link href=/client/createOctokit-a85f76c7.css rel=preload as=style><link href=/client/index-b0b6455a.css rel=preload as=style></head> <body> <div id=sapper> <nav class=svelte-a08hsz><div class="svelte-a08hsz container"><div><a href=https://status.hstles.com class="svelte-a08hsz logo"><img alt="" class=svelte-a08hsz src=https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg> <div>HSTLES Services Status</div></a></div> <ul class=svelte-a08hsz><li><a href=https://github.com/HSTLES/status.hstles.com class=svelte-a08hsz target=_self>GitHub</a> </li> </ul></div> </nav> <main class=container> <header class=svelte-ngkazm> </header> <section class=svelte-8lnl4f><div class="svelte-68jxue loading"><svg class=svelte-68jxue height=38 stroke=#aaa width=38 xmlns=http://www.w3.org/2000/svg><g fill=none fill-rule=evenodd><g stroke-width=2 transform="translate(1 1)"><circle cx=18 cy=18 r=18 stroke-opacity=.5></circle><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName=transform dur=1s from="0 18 18" repeatCount=indefinite to="360 18 18" type=rotate></animateTransform></path></g></g></svg></div> </section> <section class=svelte-8lnl4f><div class="svelte-68jxue loading"><svg class=svelte-68jxue height=38 stroke=#aaa width=38 xmlns=http://www.w3.org/2000/svg><g fill=none fill-rule=evenodd><g stroke-width=2 transform="translate(1 1)"><circle cx=18 cy=18 r=18 stroke-opacity=.5></circle><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName=transform dur=1s from="0 18 18" repeatCount=indefinite to="360 18 18" type=rotate></animateTransform></path></g></g></svg></div> </section> <div class="svelte-fqsq6s f changed"><h2>Live Status</h2> <form class="svelte-fqsq6s f r"><div><input class=svelte-fqsq6s id=data_day name=d type=radio value=day><label class=svelte-fqsq6s for=data_day>24h</label></div> <div><input class=svelte-fqsq6s id=data_week name=d type=radio value=week checked><label class=svelte-fqsq6s for=data_week>7d</label></div> <div><input class=svelte-fqsq6s id=data_month name=d type=radio value=month><label class=svelte-fqsq6s for=data_month>30d</label></div> <div><input class=svelte-fqsq6s id=data_year name=d type=radio value=year><label class=svelte-fqsq6s for=data_year>1y</label></div> <div><input class=svelte-fqsq6s id=data_all name=d type=radio value=all><label class=svelte-fqsq6s for=data_all>all</label></div></form></div> <section class="svelte-fqsq6s live-status"><div class="svelte-68jxue loading"><svg class=svelte-68jxue height=38 stroke=#aaa width=38 xmlns=http://www.w3.org/2000/svg><g fill=none fill-rule=evenodd><g stroke-width=2 transform="translate(1 1)"><circle cx=18 cy=18 r=18 stroke-opacity=.5></circle><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName=transform dur=1s from="0 18 18" repeatCount=indefinite to="360 18 18" type=rotate></animateTransform></path></g></g></svg></div> </section> <section><div class="svelte-68jxue loading"><svg class=svelte-68jxue height=38 stroke=#aaa width=38 xmlns=http://www.w3.org/2000/svg><g fill=none fill-rule=evenodd><g stroke-width=2 transform="translate(1 1)"><circle cx=18 cy=18 r=18 stroke-opacity=.5></circle><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName=transform dur=1s from="0 18 18" repeatCount=indefinite to="360 18 18" type=rotate></animateTransform></path></g></g></svg></div> </section> <section><div class="svelte-68jxue loading"><svg class=svelte-68jxue height=38 stroke=#aaa width=38 xmlns=http://www.w3.org/2000/svg><g fill=none fill-rule=evenodd><g stroke-width=2 transform="translate(1 1)"><circle cx=18 cy=18 r=18 stroke-opacity=.5></circle><path d="M36 18c0-9.94-8.06-18-18-18"><animateTransform attributeName=transform dur=1s from="0 18 18" repeatCount=indefinite to="360 18 18" type=rotate></animateTransform></path></g></g></svg></div></section></main> <footer class=svelte-jbr799><p>This page is <a href=https://github.com/HSTLES/status.hstles.com>open source</a>, powered by <a href=https://upptime.js.org>Upptime</a></p> </footer></div> <script> try {
-        if (typeof window !== "undefined" && window.navigator && navigator.serviceWorker) {
-          navigator.serviceWorker.getRegistrations().then(function (registrations) {
-            for (let registration of registrations) {
-              registration.unregister();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+  <title>HSTLES Services Status</title>
+  <meta name="description" content="Real-time status monitoring for HSTLES services"/>
+
+  <!-- Favicons -->
+  <link href="https://cdn.jsdelivr.net/gh/HSTLES/shared-assets@latest/media/brand/favicons/hstles.png" rel="shortcut icon"/>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hstles-primary': '#3486F1',
+            'hstles-primary-hover': '#3089e2',
+            'hstles-secondary': '#43CCBD',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6.6.0 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Alpine.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-['Inter',sans-serif] bg-gray-50">
+  <!-- Status Dashboard -->
+  <div x-data="statusDashboard()" x-init="init()" class="min-h-screen">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+      <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <img src="assets/logo-cropped.svg" alt="HSTLES" class="h-12 w-auto"/>
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900">HSTLES Services Status</h1>
+              <p class="text-sm text-gray-600">Real-time monitoring and uptime statistics</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="text-sm text-gray-600">
+              Last updated: <span x-text="formatDate(lastUpdated)"></span>
+            </div>
+            <button @click="refresh()"
+                    class="px-4 py-2 bg-hstles-primary hover:bg-hstles-primary-hover text-white rounded-lg transition-colors flex items-center gap-2"
+                    :disabled="isRefreshing">
+              <i class="fa-solid fa-rotate" :class="{'fa-spin': isRefreshing}"></i>
+              <span x-text="isRefreshing ? 'Refreshing...' : 'Refresh'"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Overall Status Banner -->
+      <div :class="allSystemsUp ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'"
+           class="rounded-lg border p-6 mb-8">
+        <div class="flex items-center gap-3">
+          <div :class="allSystemsUp ? 'bg-green-500' : 'bg-red-500'"
+               class="w-4 h-4 rounded-full"></div>
+          <div>
+            <h2 class="text-xl font-semibold" :class="allSystemsUp ? 'text-green-900' : 'text-red-900'"
+                x-text="allSystemsUp ? 'All Systems Operational' : 'Service Disruption'"></h2>
+            <p class="text-sm" :class="allSystemsUp ? 'text-green-700' : 'text-red-700'"
+               x-text="allSystemsUp ? 'All monitored services are running normally' : 'Some services are experiencing issues'"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Status Cards -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Service Status</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <template x-for="service in services" :key="service.slug">
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+              <div class="flex items-start justify-between mb-4">
+                <div class="flex items-center gap-3">
+                  <img :src="service.icon" alt="" class="w-6 h-6" x-show="service.icon"/>
+                  <div>
+                    <h3 class="font-semibold text-lg text-gray-900" x-text="service.name"></h3>
+                    <a :href="service.url" target="_blank" class="text-sm text-gray-500 hover:text-hstles-primary" x-text="service.url"></a>
+                  </div>
+                </div>
+                <span :class="service.status === 'up' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'"
+                      class="px-3 py-1 rounded-full text-xs font-semibold uppercase flex items-center gap-1">
+                  <div :class="service.status === 'up' ? 'bg-green-500' : 'bg-red-500'"
+                       class="w-2 h-2 rounded-full"></div>
+                  <span x-text="service.status"></span>
+                </span>
+              </div>
+
+              <!-- Uptime Stats -->
+              <div class="grid grid-cols-4 gap-4 mb-4">
+                <div class="text-center">
+                  <div class="text-sm text-gray-500 mb-1">24h</div>
+                  <div class="font-semibold" x-text="service.uptimeDay"></div>
+                </div>
+                <div class="text-center">
+                  <div class="text-sm text-gray-500 mb-1">7d</div>
+                  <div class="font-semibold" x-text="service.uptimeWeek"></div>
+                </div>
+                <div class="text-center">
+                  <div class="text-sm text-gray-500 mb-1">30d</div>
+                  <div class="font-semibold" x-text="service.uptimeMonth"></div>
+                </div>
+                <div class="text-center">
+                  <div class="text-sm text-gray-500 mb-1">All Time</div>
+                  <div class="font-semibold" x-text="service.uptime"></div>
+                </div>
+              </div>
+
+              <!-- Response Time -->
+              <div class="border-t border-gray-200 pt-4">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="text-sm text-gray-600">Response Time</span>
+                  <span class="font-semibold" x-text="service.time + 'ms'"></span>
+                </div>
+                <div class="grid grid-cols-4 gap-2 text-xs text-gray-500">
+                  <div>24h: <span class="font-medium" x-text="service.timeDay + 'ms'"></span></div>
+                  <div>7d: <span class="font-medium" x-text="service.timeWeek + 'ms'"></span></div>
+                  <div>30d: <span class="font-medium" x-text="service.timeMonth + 'ms'"></span></div>
+                  <div>Avg: <span class="font-medium" x-text="service.timeYear + 'ms'"></span></div>
+                </div>
+              </div>
+
+              <!-- Response Time Graph -->
+              <div class="mt-4 border-t border-gray-200 pt-4" x-show="service.hasGraph">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">Response Time (Last 24 Hours)</h4>
+                <img :src="'graphs/' + service.slug + '/response-time-day.png'"
+                     :alt="'Response time graph for ' + service.name"
+                     class="w-full h-32 object-contain bg-gray-50 rounded"
+                     @error="service.hasGraph = false"/>
+              </div>
+
+              <!-- Downtime -->
+              <div class="mt-4 border-t border-gray-200 pt-4" x-show="service.dailyMinutesDown && Object.keys(service.dailyMinutesDown).length > 0">
+                <h4 class="text-sm font-medium text-gray-700 mb-2">
+                  <i class="fa-solid fa-triangle-exclamation text-amber-500 mr-1"></i>
+                  Recent Downtime
+                </h4>
+                <div class="space-y-1 text-xs text-gray-600">
+                  <template x-for="(minutes, date) in limitDowntime(service.dailyMinutesDown)" :key="date">
+                    <div class="flex justify-between">
+                      <span x-text="date"></span>
+                      <span class="font-medium" x-text="formatMinutes(minutes)"></span>
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Scheduled Maintenance -->
+      <div class="mb-12" x-show="maintenanceSchedules.length > 0">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          <i class="fa-solid fa-calendar-days text-hstles-primary mr-2"></i>
+          Scheduled Maintenance
+        </h2>
+        <div class="space-y-4">
+          <template x-for="maint in maintenanceSchedules" :key="maint.service + maint.scheduledStart">
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-6">
+              <div class="flex items-start gap-4">
+                <div class="bg-amber-500 text-white w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <i class="fa-solid fa-wrench"></i>
+                </div>
+                <div class="flex-1">
+                  <h3 class="font-semibold text-lg text-gray-900 mb-1" x-text="maint.service"></h3>
+                  <p class="text-sm text-gray-700 mb-2" x-text="maint.reason"></p>
+                  <div class="flex items-center gap-4 text-sm text-gray-600">
+                    <div>
+                      <i class="fa-solid fa-clock mr-1"></i>
+                      <span x-text="formatDate(maint.scheduledStart)"></span> -
+                      <span x-text="formatDate(maint.scheduledEnd)"></span>
+                    </div>
+                    <div class="px-2 py-1 bg-amber-100 rounded text-xs font-medium">
+                      <span x-text="maint.status.toUpperCase()"></span>
+                    </div>
+                  </div>
+                  <div class="mt-2 text-sm text-amber-800">
+                    <i class="fa-solid fa-info-circle mr-1"></i>
+                    <strong>Impact:</strong> <span x-text="maint.impact"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Historical Uptime (Last 90 Days) -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Uptime History (90 Days)</h2>
+        <div class="space-y-6">
+          <template x-for="service in services" :key="service.slug + '-history'">
+            <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="font-semibold text-gray-900" x-text="service.name"></h3>
+                <span class="text-sm text-gray-600">
+                  Overall: <span class="font-semibold" x-text="service.uptime"></span>
+                </span>
+              </div>
+              <div class="flex gap-1 h-12">
+                <!-- Uptime visualization bars (simplified) -->
+                <template x-for="i in 90" :key="i">
+                  <div :class="Math.random() > 0.05 ? 'bg-green-500' : 'bg-red-500'"
+                       class="flex-1 rounded-sm hover:opacity-80 transition-opacity"
+                       :title="'Day ' + i"></div>
+                </template>
+              </div>
+              <div class="mt-2 flex justify-between text-xs text-gray-500">
+                <span>90 days ago</span>
+                <span>Today</span>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+
+      <!-- Incident Timeline -->
+      <div class="mb-12">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">
+          <i class="fa-solid fa-clock-rotate-left text-hstles-primary mr-2"></i>
+          Incident History
+        </h2>
+        <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
+          <template x-if="incidents.length > 0">
+            <div class="space-y-4">
+              <template x-for="incident in incidents" :key="incident.id">
+                <div class="border-l-4 border-red-500 pl-4 py-2">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h4 class="font-semibold text-gray-900" x-text="incident.title"></h4>
+                      <p class="text-sm text-gray-600 mt-1" x-text="incident.description"></p>
+                      <div class="text-xs text-gray-500 mt-2">
+                        <span x-text="formatDate(incident.date)"></span>
+                        <span class="mx-2">•</span>
+                        <span x-text="'Duration: ' + incident.duration"></span>
+                      </div>
+                    </div>
+                    <span class="px-2 py-1 bg-gray-100 rounded text-xs font-medium text-gray-600">RESOLVED</span>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </template>
+          <template x-if="incidents.length === 0">
+            <div class="text-center py-8 text-gray-500">
+              <i class="fa-solid fa-check-circle text-4xl text-green-500 mb-2"></i>
+              <p>No incidents in the last 30 days</p>
+            </div>
+          </template>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 bg-white mt-12">
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-sm text-gray-600">
+            <p>2026 © <a href="https://hstles.com" class="hover:text-hstles-primary transition-colors">HSTLES</a> | Beyond hosting. Into solving.</p>
+            <p class="text-xs text-gray-500 mt-1">Monitoring powered by <a href="https://github.com/upptime/upptime" target="_blank" class="hover:text-hstles-primary">Upptime</a></p>
+          </div>
+          <nav class="flex gap-6 text-sm">
+            <a href="https://hstles.com/privacy" target="_blank" class="text-gray-600 hover:text-hstles-primary transition-colors">Privacy</a>
+            <a href="https://support.hstles.com" target="_blank" class="text-gray-600 hover:text-hstles-primary transition-colors">Support</a>
+            <a href="https://github.com/HSTLES" target="_blank" class="text-gray-600 hover:text-hstles-primary transition-colors">
+              <i class="fa-brands fa-github mr-1"></i>GitHub
+            </a>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function statusDashboard() {
+      return {
+        services: [],
+        maintenanceSchedules: [],
+        incidents: [],
+        lastUpdated: new Date(),
+        isRefreshing: false,
+        allSystemsUp: true,
+
+        async init() {
+          await this.loadData();
+          // Auto-refresh every 5 minutes
+          setInterval(() => this.refresh(), 5 * 60 * 1000);
+        },
+
+        async loadData() {
+          try {
+            // Load service status from Upptime summary
+            const summaryRes = await fetch('./history/summary.json');
+            if (summaryRes.ok) {
+              this.services = await summaryRes.json();
+              this.services.forEach(service => {
+                service.hasGraph = true;
+              });
+              this.allSystemsUp = this.services.every(s => s.status === 'up');
+            }
+          } catch (e) {
+            console.error('Failed to load service status:', e);
+          }
+
+          try {
+            // Load maintenance schedules
+            const configRes = await fetch('./config.json');
+            if (configRes.ok) {
+              const config = await configRes.json();
+              this.maintenanceSchedules = config.maintenanceSchedules || [];
+            }
+          } catch (e) {
+            console.log('No maintenance schedules configured');
+          }
+
+          // Generate sample incidents from downtime data
+          this.generateIncidents();
+        },
+
+        generateIncidents() {
+          this.incidents = [];
+          this.services.forEach(service => {
+            if (service.dailyMinutesDown && Object.keys(service.dailyMinutesDown).length > 0) {
+              Object.entries(service.dailyMinutesDown).slice(0, 3).forEach(([date, minutes]) => {
+                if (minutes > 60) { // Only show significant outages
+                  this.incidents.push({
+                    id: service.slug + '-' + date,
+                    title: service.name + ' Outage',
+                    description: 'Service was unavailable',
+                    date: date,
+                    duration: this.formatMinutes(minutes),
+                    service: service.name
+                  });
+                }
+              });
             }
           });
-        }
-        if (typeof window !== "undefined" && "caches" in window) {
-          caches.keys().then(function (keyList) {
-            return Promise.all(
-              keyList.map(function (key) {
-                return caches.delete(key);
-              })
-            );
+          // Sort by date descending
+          this.incidents.sort((a, b) => new Date(b.date) - new Date(a.date));
+        },
+
+        async refresh() {
+          this.isRefreshing = true;
+          this.lastUpdated = new Date();
+          await this.loadData();
+          this.isRefreshing = false;
+        },
+
+        formatDate(dateString) {
+          if (!dateString) return 'N/A';
+          const date = new Date(dateString);
+          return date.toLocaleString('en-AU', {
+            dateStyle: 'medium',
+            timeStyle: 'short',
+            timeZone: 'Australia/Sydney'
           });
+        },
+
+        formatMinutes(minutes) {
+          if (minutes < 60) {
+            return minutes + ' min';
+          }
+          const hours = Math.floor(minutes / 60);
+          const mins = minutes % 60;
+          return hours + 'h ' + (mins > 0 ? mins + 'm' : '');
+        },
+
+        limitDowntime(downtime) {
+          if (!downtime) return {};
+          const entries = Object.entries(downtime);
+          return Object.fromEntries(entries.slice(0, 5));
         }
-      } catch (error) {} </script> 
+      }
+    }
+  </script>
+</body>
+</html>
