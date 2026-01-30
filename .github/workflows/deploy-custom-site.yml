@@ -31,6 +31,9 @@ jobs:
           cp index.html deploy/
           cp config.json deploy/
 
+          # Create CNAME file for custom domain
+          echo "status.hstles.com" > deploy/CNAME
+
           # Copy Upptime-generated data (if exists)
           [ -d api ] && cp -r api deploy/ || echo "No api directory yet"
           [ -d graphs ] && cp -r graphs deploy/ || echo "No graphs directory yet"
