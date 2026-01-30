@@ -37,26 +37,27 @@
 <body class="font-['Inter',sans-serif] bg-gray-50">
   <!-- Status Dashboard -->
   <div x-data="statusDashboard()" x-init="init()" class="min-h-screen">
-    <!-- Header -->
+    <!-- Header - Mobile Friendly -->
     <header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center gap-4">
-            <img src="assets/logo-cropped.svg" alt="HSTLES" class="h-12 w-auto"/>
+      <div class="container mx-auto px-4 py-3 md:py-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+          <div class="flex items-center gap-3 md:gap-4">
+            <img src="assets/logo-cropped.svg" alt="HSTLES" class="h-10 md:h-12 w-auto flex-shrink-0"/>
             <div>
-              <h1 class="text-2xl font-bold text-gray-900">HSTLES Services Status</h1>
-              <p class="text-sm text-gray-600">Real-time monitoring and uptime statistics</p>
+              <h1 class="text-lg md:text-2xl font-bold text-gray-900">HSTLES Services Status</h1>
+              <p class="text-xs md:text-sm text-gray-600 hidden sm:block">Real-time monitoring and uptime statistics</p>
             </div>
           </div>
-          <div class="flex items-center gap-4">
-            <div class="text-sm text-gray-600">
-              Last updated: <span x-text="formatDate(lastUpdated)"></span>
+          <div class="flex items-center gap-3 md:gap-4 w-full sm:w-auto">
+            <div class="text-xs md:text-sm text-gray-600 flex-1 sm:flex-none">
+              <span class="hidden md:inline">Last updated: </span>
+              <span x-text="formatDate(lastUpdated)"></span>
             </div>
             <button @click="refresh()"
-                    class="px-4 py-2 bg-hstles-primary hover:bg-hstles-primary-hover text-white rounded-lg transition-colors flex items-center gap-2"
+                    class="px-3 md:px-4 py-2 bg-hstles-primary hover:bg-hstles-primary-hover text-white rounded-lg transition-colors flex items-center gap-2 text-sm"
                     :disabled="isRefreshing">
               <i class="fa-solid fa-rotate" :class="{'fa-spin': isRefreshing}"></i>
-              <span x-text="isRefreshing ? 'Refreshing...' : 'Refresh'"></span>
+              <span class="hidden sm:inline" x-text="isRefreshing ? 'Refreshing...' : 'Refresh'"></span>
             </button>
           </div>
         </div>
@@ -94,11 +95,15 @@
                     <a :href="service.url" target="_blank" class="text-sm text-gray-500 hover:text-hstles-primary" x-text="service.url"></a>
                   </div>
                 </div>
-                <span :class="service.status === 'up' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'"
+                <span :class="service.inMaintenance ? 'bg-amber-100 text-amber-800' : (service.status === 'up' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800')"
                       class="px-3 py-1 rounded-full text-xs font-semibold uppercase flex items-center gap-1">
-                  <div :class="service.status === 'up' ? 'bg-green-500' : 'bg-red-500'"
+                  <div :class="service.inMaintenance ? 'bg-amber-500' : (service.status === 'up' ? 'bg-green-500' : 'bg-red-500')"
                        class="w-2 h-2 rounded-full"></div>
-                  <span x-text="service.status"></span>
+                  <span x-text="service.inMaintenance ? 'Maintenance' : service.status"></span>
+                </span>
+                <span x-show="service.inMaintenance" class="mt-2 text-xs text-amber-700 block">
+                  <i class="fa-solid fa-wrench mr-1"></i>
+                  <span x-text="service.maintenanceReason"></span>
                 </span>
               </div>
 
@@ -292,6 +297,7 @@
     function statusDashboard() {
       return {
         services: [],
+        maintenanceWindows: {},
         maintenanceSchedules: [],
         incidents: [],
         lastUpdated: new Date(),
@@ -306,31 +312,50 @@
 
         async loadData() {
           try {
+            // Load maintenance windows first
+            const configRes = await fetch('./config.json');
+            if (configRes.ok) {
+              const config = await configRes.json();
+              this.maintenanceWindows = config.maintenanceWindows || {};
+              this.maintenanceSchedules = config.maintenanceSchedules || [];
+            }
+          } catch (e) {
+            console.log('No maintenance configuration');
+          }
+
+          try {
             // Load service status from Upptime summary
             const summaryRes = await fetch('./history/summary.json');
             if (summaryRes.ok) {
               this.services = await summaryRes.json();
               this.services.forEach(service => {
                 service.hasGraph = true;
+
+                // Check if service is in maintenance window
+                const serviceUrl = service.url.replace('https://', '').replace('http://', '');
+                if (this.maintenanceWindows[serviceUrl]) {
+                  const maint = this.maintenanceWindows[serviceUrl];
+                  const now = new Date();
+                  const start = new Date(maint.start);
+                  const end = new Date(maint.end);
+
+                  if (now >= start && now <= end) {
+                    service.inMaintenance = true;
+                    service.maintenanceReason = maint.reason;
+                    service.maintenanceEnd = maint.end;
+                  }
+                }
               });
-              this.allSystemsUp = this.services.every(s => s.status === 'up');
+
+              // Only count services NOT in maintenance for "all systems up" check
+              const activeServices = this.services.filter(s => !s.inMaintenance);
+              this.allSystemsUp = activeServices.length === 0 || activeServices.every(s => s.status === 'up');
             }
           } catch (e) {
             console.error('Failed to load service status:', e);
           }
 
-          try {
-            // Load maintenance schedules
-            const configRes = await fetch('./config.json');
-            if (configRes.ok) {
-              const config = await configRes.json();
-              this.maintenanceSchedules = config.maintenanceSchedules || [];
-            }
-          } catch (e) {
-            console.log('No maintenance schedules configured');
-          }
-
-          // Generate sample incidents from downtime data
+          // Generate sample incidents from downtime data (exclude maintenance windows)
           this.generateIncidents();
         },
 

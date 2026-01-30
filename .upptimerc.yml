@@ -7,6 +7,40 @@ sites:
     url: https://hstles.com
   - name: HSTLES Login (login.hstles.com)
     url: https://login.hstles.com
+    # Under development - maintenance window until April 1, 2026
+    expectedStatusCodes:
+      - 200
+      - 404
+      - 500
+      - 502
+      - 503
+  - name: Support Portal (support.hstles.com)
+    url: https://support.hstles.com
+    # Under development - maintenance window until April 1, 2026
+    expectedStatusCodes:
+      - 200
+      - 404
+      - 500
+      - 502
+      - 503
+  - name: Management Console (manage.hstles.com)
+    url: https://manage.hstles.com
+    # Under development - maintenance window until April 1, 2026
+    expectedStatusCodes:
+      - 200
+      - 404
+      - 500
+      - 502
+      - 503
+  - name: API Gateway (api.hstles.com)
+    url: https://api.hstles.com
+    # Under development - maintenance window until April 1, 2026
+    expectedStatusCodes:
+      - 200
+      - 404
+      - 500
+      - 502
+      - 503
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain

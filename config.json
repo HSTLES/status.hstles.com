@@ -1,12 +1,25 @@
 {
-  "maintenanceSchedules": [
-    {
-      "service": "login.hstles.com",
-      "reason": "Security updates and certificate renewal",
-      "scheduledStart": "2026-02-15T02:00:00Z",
-      "scheduledEnd": "2026-02-15T04:00:00Z",
-      "impact": "Authentication will be unavailable",
-      "status": "scheduled"
+  "maintenanceWindows": {
+    "login.hstles.com": {
+      "start": "2026-01-30T00:00:00Z",
+      "end": "2026-04-01T23:59:59Z",
+      "reason": "Under development - major rebuild"
+    },
+    "support.hstles.com": {
+      "start": "2026-01-30T00:00:00Z",
+      "end": "2026-04-01T23:59:59Z",
+      "reason": "Under development - initial build"
+    },
+    "manage.hstles.com": {
+      "start": "2026-01-30T00:00:00Z",
+      "end": "2026-04-01T23:59:59Z",
+      "reason": "Under development - initial build"
+    },
+    "api.hstles.com": {
+      "start": "2026-01-30T00:00:00Z",
+      "end": "2026-04-01T23:59:59Z",
+      "reason": "Under development - initial build"
     }
-  ]
+  },
+  "maintenanceSchedules": []
 }
