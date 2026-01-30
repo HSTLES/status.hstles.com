@@ -87,7 +87,7 @@
         <div class="grid md:grid-cols-2 gap-6">
           <template x-for="service in services" :key="service.slug">
             <div class="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
-              <div class="flex items-start justify-between mb-4">
+              <div class="flex items-start justify-between mb-2">
                 <div class="flex items-center gap-3">
                   <img :src="service.icon" alt="" class="w-6 h-6" x-show="service.icon"/>
                   <div>
@@ -96,15 +96,15 @@
                   </div>
                 </div>
                 <span :class="service.inMaintenance ? 'bg-amber-100 text-amber-800' : (service.status === 'up' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800')"
-                      class="px-3 py-1 rounded-full text-xs font-semibold uppercase flex items-center gap-1">
+                      class="px-3 py-1 rounded-full text-xs font-semibold uppercase flex items-center gap-1 flex-shrink-0">
                   <div :class="service.inMaintenance ? 'bg-amber-500' : (service.status === 'up' ? 'bg-green-500' : 'bg-red-500')"
                        class="w-2 h-2 rounded-full"></div>
                   <span x-text="service.inMaintenance ? 'Maintenance' : service.status"></span>
                 </span>
-                <span x-show="service.inMaintenance" class="mt-2 text-xs text-amber-700 block">
-                  <i class="fa-solid fa-wrench mr-1"></i>
-                  <span x-text="service.maintenanceReason"></span>
-                </span>
+              </div>
+              <div x-show="service.inMaintenance" class="mb-4 text-xs text-amber-700">
+                <i class="fa-solid fa-wrench mr-1"></i>
+                <span x-text="service.maintenanceReason"></span>
               </div>
 
               <!-- Uptime Stats -->
